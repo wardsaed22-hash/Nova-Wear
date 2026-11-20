@@ -1,0 +1,279 @@
+.pcard {
+  position: relative;
+  min-width: 0;
+}
+
+.pcard__media {
+  aspect-ratio: 4 / 5;
+}
+
+.pcard__img-link {
+  position: absolute;
+  inset: 0;
+}
+
+.pcard__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 600ms var(--ease), transform 1200ms var(--ease);
+}
+
+.pcard__img--alt {
+  opacity: 0;
+}
+
+@media (hover: hover) {
+  .pcard__media:hover .pcard__img--alt {
+    opacity: 1;
+  }
+  .pcard__media:hover .pcard__img {
+    transform: scale(1.025);
+  }
+}
+
+.pcard__badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.wish-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--ink);
+  transition: transform var(--dur) var(--ease), background-color var(--dur) var(--ease);
+}
+
+.wish-btn:hover {
+  background: rgba(246, 243, 238, 0.7);
+}
+
+.wish-btn.is-active {
+  color: var(--ink);
+}
+
+.wish-btn:active {
+  transform: scale(0.9);
+}
+
+.pcard__wish {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 38px;
+  height: 38px;
+  background: rgba(246, 243, 238, 0.88);
+}
+
+.pcard__wish:hover {
+  background: var(--paper);
+}
+
+/* Enlarge the touch target without enlarging the visible circle */
+.pcard__wish::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+}
+
+/* Quick add: compact circle on touch, full bar on hover devices */
+.pcard__quick {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), opacity var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.pcard__quick-label {
+  display: none;
+}
+
+@media (hover: hover) and (min-width: 768px) {
+  .pcard__quick {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    height: 46px;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(8px);
+    box-shadow: none;
+  }
+  .pcard__quick-label {
+    display: inline;
+  }
+  .pcard__media:hover .pcard__quick,
+  .pcard__quick:focus-visible {
+    opacity: 1;
+    transform: none;
+  }
+  .pcard__quick:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+}
+
+.pcard__sizes {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  padding: 10px 12px 12px;
+  background: rgba(246, 243, 238, 0.97);
+  animation: rise 220ms var(--ease);
+}
+
+.pcard__sizes-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pcard__sizes-close {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-right: -8px;
+}
+
+.pcard__sizes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.pcard__size {
+  flex: 1 0 auto;
+  min-width: 40px;
+  height: 38px;
+  padding: 0 6px;
+  border: 1px solid var(--line-strong);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+.pcard__size:hover:not(:disabled) {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.pcard__size:disabled {
+  color: #aaa39a;
+  text-decoration: line-through;
+  cursor: not-allowed;
+  background: transparent;
+}
+
+.pcard__info {
+  display: grid;
+  gap: 2px;
+  padding-top: 14px;
+}
+
+.pcard__cat {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.pcard__name {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.pcard__name a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.pcard__price {
+  font-size: 15px;
+}
+
+.pcard__colors {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.pcard__swatches {
+  display: inline-flex;
+}
+
+.pcard__swatches span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin-right: -3px;
+  box-shadow: 0 0 0 1.5px var(--paper);
+}
+
+/* ---------- Grid ---------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 12px;
+}
+
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 380px) {
+  .pcard__name,
+  .pcard__price {
+    font-size: 14px;
+  }
+}

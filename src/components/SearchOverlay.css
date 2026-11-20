@@ -1,0 +1,147 @@
+.search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  max-height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--paper);
+  animation: searchIn 320ms var(--ease);
+}
+
+@keyframes searchIn {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+}
+
+@media (max-width: 767px) {
+  .search {
+    bottom: 0;
+  }
+}
+
+.search__inner {
+  padding-bottom: 40px;
+}
+
+.search__form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: calc(var(--header-h) + 24px);
+  border-bottom: 1px solid var(--ink);
+}
+
+.search__input {
+  flex: 1;
+  min-width: 0;
+  height: 56px;
+  border: 0;
+  background: transparent;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 36px);
+}
+
+.search__input::placeholder {
+  color: #9c968c;
+}
+
+.search__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search__input:focus-visible {
+  outline: none;
+}
+
+.search__form:focus-within {
+  border-bottom-width: 2px;
+}
+
+.search__body {
+  padding-top: 28px;
+}
+
+.search__suggest .eyebrow {
+  margin-bottom: 14px;
+}
+
+.search__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.search__count {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.search__groups {
+  margin-top: 16px;
+}
+
+.search__empty {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+  max-width: 520px;
+}
+
+.search__empty p {
+  color: var(--muted);
+}
+
+.search__results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 12px;
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .search__results {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px 20px;
+  }
+}
+
+.search-item {
+  display: grid;
+  gap: 12px;
+}
+
+.search-item__media {
+  aspect-ratio: 4 / 5;
+}
+
+.search-item__media img {
+  transition: transform 800ms var(--ease);
+}
+
+.search-item:hover .search-item__media img {
+  transform: scale(1.03);
+}
+
+.search-item__info {
+  display: grid;
+  gap: 2px;
+  font-size: 15px;
+}
+
+.search-item__cat {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.search__all {
+  margin-top: 32px;
+}

@@ -1,0 +1,74 @@
+.rail {
+  position: relative;
+}
+
+.rail__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 68%;
+  gap: 12px;
+  margin: 0 calc(var(--gutter) * -1);
+  padding: 0 var(--gutter) 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rail__track::-webkit-scrollbar {
+  display: none;
+}
+
+.rail__item {
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+@media (min-width: 600px) {
+  .rail__track {
+    grid-auto-columns: 40%;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rail__track {
+    grid-auto-columns: calc((100% - 3 * 20px) / 4);
+    gap: 20px;
+  }
+}
+
+.rail__nav {
+  display: none;
+}
+
+@media (hover: hover) and (min-width: 1024px) {
+  .rail__nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 24px;
+  }
+}
+
+.rail__btn {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+}
+
+.rail__btn:hover:not(:disabled) {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.rail__btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
