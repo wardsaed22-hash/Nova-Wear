@@ -89,13 +89,18 @@ button.stepper__btn:hover .stepper__label {
   color: var(--paper);
 }
 
+/* Narrow screens: stack the label under its number so every step fits its own column. */
 @media (max-width: 599px) {
-  .stepper__item:not(.is-current) .stepper__label {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
+  .stepper__btn {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-top: 10px;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
+  .stepper__label {
+    white-space: nowrap;
   }
 }
 

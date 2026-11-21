@@ -152,7 +152,7 @@ Designed mobile-first and checked at **1440, 1024, 768, 430 and 390 px**.
 
 - Page titles and meta descriptions per route (product pages include name and price)
 - Open Graph and Twitter card tags, with a 1200×630 share image
-- Canonical link updated per route (placeholder origin in `src/hooks/useDocumentMeta.js`)
+- Canonical link updated per route (production origin set in `src/hooks/useDocumentMeta.js`)
 - SVG favicon
 - **`noindex, nofollow`** meta tag and a disallow-all `robots.txt`, because this is a demo
 

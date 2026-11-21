@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
 const SITE = 'NOVA WEAR';
-// Placeholder production origin, swap for the real domain when deployed.
-const BASE_URL = 'https://nova-wear.example.com';
+// Production origin used for canonical and Open Graph URLs.
+const BASE_URL = 'https://nova-wear-store.netlify.app';
 const DEFAULT_DESC =
   'NOVA WEAR is a premium fashion concept store: considered outerwear, fine knitwear and modern tailoring designed to last. Portfolio demo.';
 
