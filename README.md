@@ -13,15 +13,23 @@ wishlist and a four-step checkout.
 
 ## Live demo
 
-**🔗 Live demo:** _coming soon_ — `https://your-deployment-url.example`
+**🔗 Live demo:** [nova-wear-store.netlify.app](https://nova-wear-store.netlify.app)
 
 ## Screenshots
 
-| Home (desktop) | Product page | Mobile |
-|---|---|---|
-| _screenshot placeholder_ | _screenshot placeholder_ | _screenshot placeholder_ |
+### Desktop — Home
+![Desktop Home](docs/screenshots/desktop-home.webp)
 
-<!-- Suggested: docs/screenshots/home-1440.png, product-1440.png, shop-390.png, checkout-390.png -->
+### Desktop — Product Details
+![Desktop Product](docs/screenshots/desktop-product.webp)
+
+### Mobile — Home
+<img src="docs/screenshots/mobile-home.webp" width="320" alt="Mobile Home">
+
+### Mobile — Checkout
+<img src="docs/screenshots/mobile-checkout.webp" width="320" alt="Mobile Checkout">
+
+<sub>Captured from the live site at 1440 px (desktop) and 390 px (mobile).</sub>
 
 ---
 
